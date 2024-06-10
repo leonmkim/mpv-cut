@@ -114,7 +114,7 @@ ACTIONS.LIST = function(d)
 	print("Δ " .. delta)
 end
 
-ACTION = "COPY"
+ACTION = "ENCODE"
 
 CHANNEL = 1
 
