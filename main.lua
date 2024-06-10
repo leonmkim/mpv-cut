@@ -151,6 +151,9 @@ end
 local function get_data()
 	local d = {}
 	d.inpath = mp.get_property("path")
+	-- add file: prefix before the basename
+	dirPath, basename = string.match(d.inpath, "(.-)([^\\/]-%.?([^%.\\/]*))$")
+	d.inpath = dirPath .. "file:" .. basename
 	d.indir = utils.split_path(d.inpath)
 	d.infile = mp.get_property("filename")
 	d.infile_noext = mp.get_property("filename/no-ext")
